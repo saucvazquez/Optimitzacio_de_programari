@@ -1,6 +1,6 @@
 package accepta16;
 import java.util.Scanner;
-
+//prova
 public class Accepta16 {
 
 
