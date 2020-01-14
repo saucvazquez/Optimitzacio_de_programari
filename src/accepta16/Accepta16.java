@@ -1,30 +1,51 @@
-package accepta16;
+package UF2.NF1;
 
+//importar llibreries
+import java.text.DecimalFormat;
 import java.util.Scanner;
-//prova
 
-public class Accepta16 {
+public class Optimitzacio_de_programari {
 
-    //main
+    // variables globals
+    private static int cProva, entrada;
+    private static double sum;
+    private static Scanner sc = null;
+    private static String str = null;
+
+    // main
     public static void main(String[] args) {
 
-        int num;
-        double sum, r;
-        Scanner teclat = new Scanner(System.in);
+        sc = new Scanner(System.in);
+        entrada = sc.nextInt();
 
-        System.out.print("Ingrese Numero:");
-        num = Integer.parseInt(teclat.nextLine());
-
-        sum = Math.sqrt(num);
-        r = sum;
-
-        if (r % 2 == 0) {
-            if (sum * sum == num) {
-                System.out.print("Es cuadrado Perfecto");
-            }
-        } else {
-            System.out.print("No es");
+        for (int i = 0; i < entrada; i++) {
+            operacion();
         }
+    }
 
+    //metode per comprovar les dades
+    public static void operacion() {
+        try {
+            sc = new Scanner(System.in);
+            cProva = sc.nextInt();
+
+            sum = Math.sqrt(cProva);
+
+            str = String.valueOf(sum);
+
+            int intNumber = Integer.parseInt(str.substring(0, str.indexOf('.')));
+
+            if (sum % 2 == 0) {
+                if (sum * sum == cProva) {
+                    System.out.println(intNumber + " (Quadrat Perfecte)");
+                }
+            } else {
+                System.out.println(intNumber + " (Quadrat Imperfecte)");
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Torna a introduir les dades.");
+        }
     }
 }
+
